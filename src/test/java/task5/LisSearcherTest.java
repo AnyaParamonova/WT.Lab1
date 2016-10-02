@@ -8,7 +8,7 @@ import static junit.framework.TestCase.assertEquals;
  * Created by Anastasia_Paramonova on 02.10.2016.
  */
 public class LisSearcherTest {
-    private static LisSearcher searcher = new LisSearcher();
+    private LisSearcher searcher = new LisSearcher();
 
     @Test
     public void test(){

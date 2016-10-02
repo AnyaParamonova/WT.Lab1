@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNull;
  */
 public class TgCalculatorTest {
 
-    private static TgCalculator calculator = new TgCalculator();
+    private TgCalculator calculator = new TgCalculator();
 
     @Test
     public void test() {
