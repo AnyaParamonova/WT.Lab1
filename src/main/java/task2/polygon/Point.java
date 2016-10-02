@@ -1,21 +1,21 @@
-package task2;
+package task2.polygon;
 
 /**
  * Created by Anastasia_Paramonova on 17.09.2016.
  */
 public class Point {
-    private double x, y;
+    private int x, y;
 
-    public Point(double x, double y){
+    public Point(int x, int y){
         this.x = x;
         this.y = y;
     }
 
-    public double getX() {
+    public int getX() {
         return x;
     }
 
-    public double getY() {
+    public int getY() {
         return y;
     }
 }
