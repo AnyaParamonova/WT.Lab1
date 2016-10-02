@@ -8,8 +8,8 @@ import static java.lang.Math.abs;
  * Created by Anastasia_Paramonova on 13.09.2016.
  * Вычислить значение выражения по формуле (все переменные принимают действительные значения).
  */
-class Calculator {
-    double calculate(double x, double y) throws ArithmeticException {
+public class Calculator {
+    public double calculate(double x, double y) throws ArithmeticException {
         return countNumerator(x, y) / countDenominator(x, y) + x;
     }
 
