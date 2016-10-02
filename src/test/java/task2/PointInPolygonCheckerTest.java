@@ -3,13 +3,10 @@ package task2;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
 import java.util.Arrays;
 import java.util.Collection;
-
 import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertFalse;
-import static junit.framework.TestCase.assertTrue;
+
 
 /**
  * Created by Anastasia_Paramonova on 02.10.2016.
@@ -18,6 +15,7 @@ import static junit.framework.TestCase.assertTrue;
 @RunWith(Parameterized.class)
 public class PointInPolygonCheckerTest {
 
+    private static PointInPolygonChecker checker = new PointInPolygonChecker();
     private int x, y;
     private boolean result;
 
@@ -36,8 +34,7 @@ public class PointInPolygonCheckerTest {
                 {-4, 0, true},
                 {0, -3, true},
                 {-5, -5, false},
-                {10, 10, false},
-                {5, 3, false}
+                {10, 10, false}
         };
 
         return Arrays.asList(data);
@@ -45,8 +42,8 @@ public class PointInPolygonCheckerTest {
 
     @Test
     public void test() {
-        PointInPolygonChecker checker = new PointInPolygonChecker();
-        assertEquals(checker.check(x, y), result);
+        String failMessage = "failed on x = " + x + " y = "+ y;
+        assertEquals(failMessage, checker.check(x, y), result);
     }
 
 }

@@ -5,7 +5,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
-
 import static junit.framework.TestCase.assertEquals;
 
 /**
@@ -15,6 +14,7 @@ import static junit.framework.TestCase.assertEquals;
 @RunWith(Parameterized.class)
 public class CalculatorTest {
 
+    private static Calculator calculator = new Calculator();
     private double x, y, result;
 
     public CalculatorTest(double x, double y, double result){
@@ -38,8 +38,8 @@ public class CalculatorTest {
 
     @Test
     public void test() {
-        Calculator calculator = new Calculator();
-        assertEquals(calculator.calculate(x, y), result, 0.000001);
+        String failMessage = "failed on x = " + x + " y = "+ y;
+        assertEquals(failMessage, calculator.calculate(x, y), result, 0.000001);
     }
 }
 
