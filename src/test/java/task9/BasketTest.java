@@ -1,9 +1,7 @@
 package task9;
 
 import org.junit.Test;
-
 import java.awt.*;
-
 import static junit.framework.TestCase.assertEquals;
 
 /**
