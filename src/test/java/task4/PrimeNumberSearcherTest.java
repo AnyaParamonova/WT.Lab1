@@ -13,11 +13,11 @@ public class PrimeNumberSearcherTest {
 
         int[] expectedResult = {1, 3, 5};
         int[] realResult = searcher.search(25, 1, 18, 7, 26, 19, 1256, 78);
-        assertArrayEquals(realResult, expectedResult);
+        assertArrayEquals("failed test 1 ", realResult, expectedResult);
 
         expectedResult = new int[0];
         realResult = searcher.search(25, 56, 128);
-        assertArrayEquals(realResult, expectedResult);
+        assertArrayEquals("failed test 2 ", realResult, expectedResult);
 
     }
 }
