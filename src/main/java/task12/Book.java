@@ -4,24 +4,59 @@ package task12;
  * Created by Anastasia_Paramonova on 03.10.2016.
  */
 
-public class Book {
+public class Book implements Cloneable{
+
     private String title;
-    private String author;
     private int price;
+    private String author;
     private static int edition;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public static int getEdition() {
+        return edition;
+    }
+
+    public static void setEdition(int edition) {
+        Book.edition = edition;
+    }
 
     @Override
     public int hashCode(){
-        int hash = (5649156 * price) << 13 | (price * 14461) >> 19;
+        int hash = (562351 * price) << 13 | (price * 14461);
+
         if(title != null){
             hash += title.hashCode();
         }else{
-            hash += 15646511;
+            hash += 929963;
         }
+
         if(author != null){
             hash *= author.hashCode();
         }else{
-            hash *= 656416564;
+            hash *= 38261;
         }
 
         return hash;
@@ -29,8 +64,8 @@ public class Book {
 
     @Override
     public String toString(){
-        return getClass().getName() + "@" + "title: " + title + ", author: " + author
-                        + ", price: " + price + ", edition: " + edition;
+        return getClass().getName() + "@" + "\ntitle=" + title + ", author=" + author
+                        + "\nprice=" + price + ", edition=" + edition;
     }
 
     @Override
@@ -69,4 +104,11 @@ public class Book {
 
         return true;
     }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException{
+        Book book = (Book) super.clone();
+        return book;
+    }
+
 }
