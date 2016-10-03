@@ -11,17 +11,32 @@ public class LisSearcherTest {
     private LisSearcher searcher = new LisSearcher();
 
     @Test
-    public void test(){
-        testOnSequence(0, 1, 2, 3, 4, 5, 6);
-        testOnSequence(1, 1, 2, 3, 1, 4, 5, 6);
-        testOnSequence(5, 6, 5, 4, 3, 2, 1);
-        testOnSequence(0);
-    }
-
-    private void testOnSequence(int expectedResult, int... sequence){
+    public void test1(){
+        int[] sequence = {1, 2, 3, 4, 5, 6};
         String failMessage = "fail on sequence: "+ Arrays.toString(sequence);
-        assertEquals(failMessage, searcher.countElementsToRemove(sequence), expectedResult);
+        assertEquals(failMessage, searcher.countElementsToRemove(sequence), 0);
     }
 
+    @Test
+    public void test2(){
+        int[] sequence = {1, 2, 3, 1, 4, 5, 6};
+        String failMessage = "fail on sequence: "+ Arrays.toString(sequence);
+        assertEquals(failMessage, searcher.countElementsToRemove(sequence), 1);
+    }
+
+    @Test
+    public void test3(){
+        int[] sequence = {5, 6, 5, 4, 3, 2, 1};
+        String failMessage = "fail on sequence: "+ Arrays.toString(sequence);
+        assertEquals(failMessage, searcher.countElementsToRemove(sequence), 5);
+    }
+
+    @Test
+    public void test4(){
+        int[] sequence = new int[0];
+        String failMessage = "fail on sequence: "+ Arrays.toString(sequence);
+        assertEquals(failMessage, searcher.countElementsToRemove(sequence), 0);
+
+    }
 
 }

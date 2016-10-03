@@ -67,9 +67,10 @@ public class ComparatorsTest {
     }
 
     private void test(BookComparator comparator){
+        String failMessage = "failed comparator: " + comparator.getClass().getName();
         List<Book> list = Arrays.asList(unsortedArray);
         Collections.sort(list, comparator);
         Object[] realResult = list.toArray();
-        assertArrayEquals(realResult, expectedResult);
+        assertArrayEquals(failMessage, realResult, expectedResult);
     }
 }
