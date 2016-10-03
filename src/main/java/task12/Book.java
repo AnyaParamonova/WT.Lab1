@@ -4,12 +4,24 @@ package task12;
  * Created by Anastasia_Paramonova on 03.10.2016.
  */
 
-public class Book implements Cloneable{
+public class Book implements Cloneable, Comparable<Book>{
 
     private String title;
     private int price;
     private String author;
     private static int edition;
+    private int isbn;
+
+    public Book(){
+
+    }
+
+    public Book(String title, String author, int price, int isbn){
+        this.title = title;
+        this.author = author;
+        this.price = price;
+        this.isbn = isbn;
+    }
 
     public String getTitle() {
         return title;
@@ -41,6 +53,14 @@ public class Book implements Cloneable{
 
     public static void setEdition(int edition) {
         Book.edition = edition;
+    }
+
+    public void setIsbn(int isbn){
+        this.isbn = isbn;
+    }
+
+    public int getIsbn(){
+        return isbn;
     }
 
     @Override
@@ -111,4 +131,7 @@ public class Book implements Cloneable{
         return book;
     }
 
+    public int compareTo(Book other) {
+        return this.isbn - other.isbn;
+    }
 }
